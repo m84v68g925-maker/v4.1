@@ -16,10 +16,14 @@ def init_data():
           data=[["张三", "E001", "班长"], ["李四", "E002", "操作工"]],
       ).to_excel(writer, sheet_name="员工名单", index=False)
       # 机台项目表
-      pd.DataFrame(
-          columns=["机台号", "项目名称", "目标产能（件/台/班）", "备注"],
-          data=[["M01", "产品A-冲压", 1000], ["M02", "产品B-组装", 800]],
-      ).to_excel(writer, sheet_name="机台项目", index=False)
+pd.DataFrame(
+    columns=["机台号", "项目名称", "目标产能（件/台/班）", "备注"],
+    data=[
+        ["M01", "产品A-冲压", 1000, ""],
+        ["M02", "产品B-组装", 800, ""],
+    ],
+).to_excel(writer, sheet_name="机台项目", index=False)
+
       # 生产记录表
       pd.DataFrame(columns=[
           "生产日期",
